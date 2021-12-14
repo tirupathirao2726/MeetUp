@@ -1,0 +1,27 @@
+{% load static %}
+<html>
+    <head>
+        <title>Active Users</title>
+        <link type="stylesheet" src="{% static 'css/current_active.css' %}"
+    </head>
+    <script type="text/javascript">
+        function popup(){
+            var un=document.active_people.value
+            document.other.value=un
+        }
+    </script>
+    <body>
+        <div class="active">
+            <form method="POST" enctype="multipart/form-data" name="active_people">
+                {% csrf_token %}
+            <h4>Logged in as {{current}}</h4>
+            <input type="hidden" name="other" value="">
+            <input type="hidden" name="user" value="{{current}}">
+            <h3>Active people</h3>
+            {% for user in  users %}
+            <button type="submit" onclick="popup" name="other">{{user}}</button><br><br>
+            {% endfor %}
+            </form>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>MeetUp</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            function Username(){
+                var un=prompt("Please Enter any username(unique)")
+                if (un!=null){
+                    document.TOPICS.username.value=un
+                }
+            }
+        </script>
+        <h1>Choose your interested topic</h1>
+        <form method="POST" enctype="multipart/form-data" name="TOPICS">
+            {% csrf_token %}
+        <input type="hidden" name='username' value="">
+        <table border="1" cellpadding="5" cellspacing="5">
+            <tr>
+                <td><button type="submit" name='button' value="topic1" onclick="Username()">Topic1</button></td>
+                <td><button type="submit"name='button' value="topic2" onclick="Username()">Topic2</button></td>
+                <td><button type="submit"name='button' value="topic3" onclick="Username()">Topic3</button></td>
+            </tr>
+            <tr>
+                <td><button type="submit" name='button' value="topic4" onclick="Username()">Topic4</button></td>
+                <td><button type="submit" name='button' value="topic5" onclick="Username()">Topic5</button></td>
+                <td><button type="submit" name='button' value="topic6" onclick="Username()">Topic6</button></td>
+            </tr>
+            <tr>
+                <td><button type="submit" name='button' value="topic7" onclick="Username()">Topic7</button></td>
+                <td><button type="submit" name='button' value="topic8" onclick="Username()">Topic8</button></td>
+                <td><button type="submit" name='button' value="topic9" onclick="Username()">Topic9</button></td>
+            </tr>
+        </table>
+        </form>
+
+    </body>
+</html>
